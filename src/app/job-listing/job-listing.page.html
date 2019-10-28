@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Jobs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item *ngFor="let job of jobs">
+    <ion-card>
+      <ion-card-title>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <ion-avatar>
+                <img src="{{job.company_logo}}" alt="company logo"/>
+              </ion-avatar>
+            </ion-col>
+            <ion-col size="6">
+              <ion-grid>
+              <ion-row>
+                <ion-text>{{job.company}}</ion-text>
+              </ion-row>
+              <ion-row>
+                <ion-text>{{job.created_at}}</ion-text>
+              </ion-row>
+              <ion-row>{{job.location}}</ion-row>
+            </ion-grid>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-title>
+      <ion-card-content>
+        <h1>{{job.title}}</h1>
+          <div innerHtml="{{job.description.substr(0,1000)}}"></div>
+          <br/>
+        <a ion-button style="float: right;" href="" routerLink="/job-details/{{job.id}}">View Job</a>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+</ion-list>
+</ion-content>

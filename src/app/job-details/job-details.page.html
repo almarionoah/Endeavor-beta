@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Job Info</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<img src="{{specificJob.company_logo}}" alt="company logo" class="ion-no-padding"/>
+<h3>{{specificJob.title}}</h3>
+<h4>{{specificJob.company}}</h4>
+<ion-text>{{specificJob.created_at}}</ion-text>
+<div innerHtml="{{specificJob.description}}"></div>
+<div innerHtml="{{specificJob.how_to_apply}}"></div>
+</ion-content>
